@@ -1,8 +1,9 @@
 import unittest
 import coverage
+from flask.cli import FlaskGroup
 
 from project import create_app
-from flask.cli import FlaskGroup
+from project.utils.db import db
 
 COV = coverage.coverage(
     branch=True,
@@ -40,6 +41,13 @@ def cov():
         return 0
     return 1
 
+
+@cli.command()
+def recreate_db():
+    db.drop_all()
+    db.create_all()
+    db.session.commit()
+    db.session.remove()
 
 if __name__ == "__main__":
     cli()
