@@ -25,6 +25,7 @@ def test():
         return 0
     return 1
 
+
 @cli.command()
 def cov():
     tests = unittest.TestLoader().discover('project/tests')
@@ -38,6 +39,7 @@ def cov():
         COV.erase()
         return 0
     return 1
+
 
 if __name__ == "__main__":
     cli()
