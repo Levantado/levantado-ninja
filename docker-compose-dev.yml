@@ -13,7 +13,9 @@ services:
       - .env
 
   nginx:
-    image: nginx:alpine
+    build:
+      context: services/nginx/dev
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     depends_on:

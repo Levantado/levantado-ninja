@@ -13,7 +13,9 @@ services:
       - .env-prod
 
   nginx:
-    image: nginx:alpine
+    build:
+      context: services/nginx/prod
+      dockerfile: Dockerfile
     ports:
       - "80:80"
       - "443:443"
