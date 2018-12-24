@@ -111,10 +111,8 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-.git/
-git/
+.env-dev
 .env
-.env-prod
 .venv
 env/
 venv/
